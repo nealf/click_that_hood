@@ -263,6 +263,10 @@ body.no-difficult-game .difficult-game {
   display: none;
 }
 
+header.game .names {
+  //display: table;
+}
+
 header.game .location-name {
   display: inline-block;
   font-weight: normal;
@@ -291,13 +295,17 @@ header.game .state-or-country {
   padding: 0;
   margin: 0 auto;
   margin-top: 5px;
-  margin-left: -10px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+header.game .annotation-canvas {
+  display: table;
+  margin: 0 auto;
+  margin-top: 15px;
+}
 header.game .annotation {
-  display: inline-flex;
-  flex-direction: row;
+  display: table-cell;
+  width: 10px;
 
   font-weight: 900;
   background: transparent;
@@ -308,7 +316,6 @@ header.game .annotation {
   border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin: 0 auto;
   margin-top: 5px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -575,6 +582,7 @@ body.main-menu #count-time-wrapper-wrapper {
   -webkit-transform-origin: 50% -250px;
   -moz-transform-origin: 50% -250px;
   transform-origin: 50% -250px;
+  opacity: 0;
 
   .name {
     font-weight: 600;
@@ -587,6 +595,7 @@ body.main-menu #count-time-wrapper-wrapper {
 
 #neighborhood-guess-wrapper.visible {
   #neighborhood-guess {
+    opacity: 1;
     -webkit-transition: -webkit-transform 200ms ease-out;
     -moz-transition: -moz-transform 200ms ease-out;
     transition: transform 200ms ease-out;
@@ -598,6 +607,7 @@ body.main-menu #count-time-wrapper-wrapper {
 
 #neighborhood-guess-wrapper.invisible {
   #neighborhood-guess {
+    opacity: 1;
     -webkit-transition: -webkit-transform 100ms ease-in;
     -moz-transition: -moz-transform 100ms ease-in;
     transition: transform 100ms ease-in;
@@ -755,6 +765,16 @@ body.no-hover #neighborhood-hover {
   &.inactive {
     background: fadein(@inactiveNeighborhoodFillColour, 15%);
     font-size: @fontSize * 1.5 * .75;
+  }
+
+  .extra-data {
+    display: block;
+    text-align: center;
+    font-size: 75%;
+    line-height: 1.2;
+    opacity: .75;
+
+    margin-top: -1em;
   }
 }
 
