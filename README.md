@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/codeforamerica/click_that_hood.png?branch=master)](click_that_hood)
-
 # Click That 'Hood
 
 ## Development Setup
