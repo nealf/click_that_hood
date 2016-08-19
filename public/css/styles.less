@@ -27,8 +27,8 @@
 
 @hoverNeighborhoodFillColour: fadeout(@highlightColour, 50%);
 @guessedNeighborhoodFillColour: rgba(0, 255, 0, .25);
-@unguessedNeighborhoodFillColour: rgba(0, 0, 0, .6);
-@inactiveNeighborhoodFillColour: rgba(128, 128, 128, .75);
+@unguessedNeighborhoodFillColour: rgba(102,0,0, 0.8);
+@inactiveNeighborhoodFillColour: rgba(102,0,0, 0.4);
 @correctNameBackground: desaturate(rgba(0, 255, 0, .95), 70%);
 
 html {
@@ -813,7 +813,7 @@ body.no-hover #neighborhood-hover {
 #map .neighborhood {
   &.unguessed {
     stroke-width: 1;
-    stroke: white;
+    stroke: rgba(255,102,0,1);
 
     fill: @unguessedNeighborhoodFillColour;
     -webkit-transition: fill 300ms;
@@ -821,6 +821,8 @@ body.no-hover #neighborhood-hover {
     transition: fill 300ms;
   }
   &[inactive] {
+    stroke-width: 1;
+    stroke: rgba(255,102,0,0.4);
     fill: @inactiveNeighborhoodFillColour;
   }
   body:not(.touch-active) &:not([inactive]).hover {
