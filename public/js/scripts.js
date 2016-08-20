@@ -1496,12 +1496,14 @@ function updateFacebookLink(congratsEl) {
   var text = getSharingMessage()
   var url = location.href
 
-  el.href = 'https://www.facebook.com/dialog/feed?' +
+  /*el.href = 'https://www.facebook.com/dialog/feed?' +
       'app_id=' + FACEBOOK_APP_ID +
       '&redirect_uri=' + encodeURIComponent(url) +
       '&link=' + encodeURIComponent(url) +
       '&name=' + encodeURIComponent('Click That ’Hood') +
-      '&description=' + encodeURIComponent(text)
+      '&description=' + encodeURIComponent(text)*/
+  el.href = 'https://www.facebook.com/sharer/sharer.php?u=' +
+    encodeURIComponent(url);
 }
 
 function updateTwitterLink(congratsEl) {
