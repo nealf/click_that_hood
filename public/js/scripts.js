@@ -44,7 +44,7 @@ var MIN_POINT_RADIUS = 16
 var MAPBOX_MAP_ID = 'codeforamerica.map-mx0iqvk2'
 
 var ADD_YOUR_CITY_URL =
-    'https://github.com/codeforamerica/click_that_hood/wiki/How-to-add-a-city-to-Click-That-%E2%80%99Hood'
+    'https://github.com/CodeforNRV/click_that_hood/wiki/Adding-new-places-or-categories'
 
 var MAPS_DEFAULT_SCALE = 512
 var D3_DEFAULT_SCALE = 500
@@ -1587,8 +1587,9 @@ function prepareMapBackground() {
   var size = globalScale * .0012238683395795992 * .995 / 2 * .800 / 2 / 4
 
   var zoom = MAP_BACKGROUND_DEFAULT_ZOOM + 2
-
+  console.log("Initial Size: ", size)
   while (size < MAP_BACKGROUND_SIZE_THRESHOLD) {
+    console.log("Changing size", size);
     size *= 2
     zoom--
   }
@@ -1614,12 +1615,18 @@ function prepareMapBackground() {
       var maxZoomLevel = MAP_BACKGROUND_MAX_ZOOM_NON_US
     }
     while (zoom > maxZoomLevel) {
+      console.log("Zooming out", zoom);
       zoom--
       size *= 2
     }
-
-    map.tileSize = { x: Math.round(size / pixelRatio),
+    if (size > 700) {
+      zoom += 2;
+      size /= 4;
+    }
+    var tileSize = { x: Math.round(size / pixelRatio),
                      y: Math.round(size / pixelRatio) }
+    console.log(size, pixelRatio, tileSize);
+    map.tileSize = tileSize;
 
     var tile = latToTile(centerLat, zoom)
     var longStep =
@@ -1636,7 +1643,7 @@ function prepareMapBackground() {
 
     lon -= ratio * longStep
 
-    map.centerzoom({ lat: lat, lon: lon }, zoom)
+    map.centerzoom({ lat: lat, lon: lon }, zoom )
   }
 }
 
@@ -1905,7 +1912,7 @@ function prepareLocationList() {
 
   var el = document.createElement('li')
   el.innerHTML = '<a target="_blank" class="add-your-city" href="' +
-      ADD_YOUR_CITY_URL + '">Add your city…</a>'
+      ADD_YOUR_CITY_URL + '">Add or suggest new categories…</a>'
   document.querySelector('.menu .locations').appendChild(el)
 
   if (cityId) {
