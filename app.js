@@ -30,13 +30,14 @@ var startApp = function() {
 
   // Redirect to environment-appropriate domain, if necessary
   app.all('*', function(req, res, next) {
-    if (config.app_host_port != req.headers.host) {
+    next('route');
+    /*if (config.app_host_port != req.headers.host) {
       var redirectUrl = 'http://' + config.app_host_port + req.url;
       console.log('Redirecting to ' + redirectUrl + '...');
       res.redirect(301, redirectUrl);
     } else {
       next('route');
-    }
+    }*/
   });
 
   // Engine-light endpoint
