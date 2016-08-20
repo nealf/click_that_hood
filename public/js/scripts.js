@@ -1485,7 +1485,7 @@ function gameOver() {
 }
 
 function getSharingMessage() {
-  return 'I just played Click That ’Hood and identified ' +
+  return 'I just played Click That ’Burg and identified ' +
       neighborhoodsGuessed.length + ' ' + CITY_DATA[cityId].locationName + ' ' +
       getNeighborhoodNoun(true) + ' in ' + getTimer() + '. Try to beat me!'
 }
