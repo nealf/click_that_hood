@@ -594,7 +594,7 @@ body.no-hover #neighborhood-hover {
 }
 #neighborhood-hover.inactive,
 #neighborhood-correct-name.inactive {
-  background: rgba(128, 128, 128, 0.9);
+  background: rgba(102, 0, 0, 0.55);
   font-size: 15.75px;
 }
 #neighborhood-hover .extra-data,
@@ -632,15 +632,16 @@ body.no-hover #neighborhood-hover {
 }
 #map .neighborhood.unguessed {
   stroke-width: 1;
-  stroke: rgba(255,102,0,1);
-  fill: rgba(102,0,0, 0.8);
+  stroke: #ff6600;
+  fill: rgba(102, 0, 0, 0.8);
   -webkit-transition: fill 300ms;
   -moz-transition: fill 300ms;
   transition: fill 300ms;
 }
 #map .neighborhood[inactive] {
-  stroke: rgba(255,102,0,0.4);
-  fill: rgba(102,0,0, 0.4);
+  stroke-width: 1;
+  stroke: rgba(255, 102, 0, 0.4);
+  fill: rgba(102, 0, 0, 0.4);
 }
 body:not(.touch-active) #map .neighborhood:not([inactive]).hover {
   cursor: pointer;
@@ -650,7 +651,7 @@ body:not(.touch-active) #map .neighborhood:not([inactive]).hover {
   transition: fill 50ms;
 }
 body:not(.touch-active) #map .neighborhood[inactive].hover {
-  fill: rgba(108, 108, 108, 0.775);
+  fill: rgba(71, 0, 0, 0.46);
   -webkit-transition: fill 50ms;
   -moz-transition: fill 50ms;
   transition: fill 50ms;
@@ -694,7 +695,7 @@ body:not(.touch-active) #map .neighborhood.padded:not([inactive]).hover {
   stroke: rgba(247, 148, 29, 0.5);
 }
 body:not(.touch-active) #map .neighborhood.padded[inactive].hover {
-  stroke: rgba(108, 108, 108, 0.775);
+  stroke: rgba(71, 0, 0, 0.46);
 }
 #map .neighborhood.padded.guessed {
   stroke: rgba(0, 255, 0, 0.25) !important;

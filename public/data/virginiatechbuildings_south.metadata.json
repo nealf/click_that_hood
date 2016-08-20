@@ -1,0 +1,9 @@
+{ 
+  "locationName": "Virginia Tech Campus - South",
+  "neighborhoodNoun": ["building", "buildings"],
+
+  "annotation": "Buildings",
+
+  "dataUrl": "http://www.openstreetmap.org",
+  "dataTitle": "OpenStreetMap"
+}
