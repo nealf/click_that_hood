@@ -1587,9 +1587,7 @@ function prepareMapBackground() {
   var size = globalScale * .0012238683395795992 * .995 / 2 * .800 / 2 / 4
 
   var zoom = MAP_BACKGROUND_DEFAULT_ZOOM + 2
-  console.log("Initial Size: ", size)
   while (size < MAP_BACKGROUND_SIZE_THRESHOLD) {
-    console.log("Changing size", size);
     size *= 2
     zoom--
   }
@@ -1615,7 +1613,6 @@ function prepareMapBackground() {
       var maxZoomLevel = MAP_BACKGROUND_MAX_ZOOM_NON_US
     }
     while (zoom > maxZoomLevel) {
-      console.log("Zooming out", zoom);
       zoom--
       size *= 2
     }
@@ -1625,7 +1622,6 @@ function prepareMapBackground() {
     }
     var tileSize = { x: Math.round(size / pixelRatio),
                      y: Math.round(size / pixelRatio) }
-    console.log(size, pixelRatio, tileSize);
     map.tileSize = tileSize;
 
     var tile = latToTile(centerLat, zoom)
